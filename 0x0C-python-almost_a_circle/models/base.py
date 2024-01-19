@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """models/base.py"""
 import json
-from turtle import * 
 
 
 class Base:
@@ -47,64 +46,3 @@ class Base:
         if json_string is None or json_string == "":
             return []
         return json.loads(json_string)
-
-    @classmethod
-    def create(cls, **dictionary):
-        """function that writes an Object to a text file,
-        using a JSON representation"""
-        instance = None
-        if cls.__name__ == "Rectangle":
-            instance = cls(1, 1)
-        else:
-            instance = cls(1)
-        instance.update(**dictionary)
-
-        return instance
-
-    @classmethod
-    def load_from_file(cls):
-        filename = cls.__name__ + ".json"
-        new_list = []
-        try:
-            with open(filename, "r", encoding='utf-8') as file:
-                json_load = cls.from_json_string(file.read())
-                for item in json_load:
-                    new_list.append(cls.create(**item))
-                return new_list
-        except FileNotFoundError:
-            return []
-
-    @staticmethod
-    def draw(list_rectangles, list_squares):
-        bgcolor("black")
-        hideturtle()
-        for rec1 in list_rectangles:
-            rec = rec1
-            color('red', '#19ee69')
-            speed(1)
-            penup()
-            if rec.x != 0:
-                setx(rec.x)
-            if rec.y != 0:
-                sety(rec.y)
-            pendown()
-            begin_fill()
-            for i in range(2):
-                fd(rec.width)
-                lt(90)
-                fd(rec.height)
-                lt(90)
-            end_fill()
-        for sq1 in list_squares:
-            sq = sq1
-            speed(1)
-            color('red')
-            penup()
-            if sq.x != 0:
-                setx(sq.x)
-            if sq.y != 0:
-                sety(sq.y)
-            pendown()
-            for i in range(4):
-                fd(sq.size)
-                lt(90)
