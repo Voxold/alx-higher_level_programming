@@ -1,0 +1,25 @@
+The ``2-say_my_name`` module
+======================
+
+Using ``say_my_name``
+-------------------
+
+This is an add_integer test file
+First import ``say_my_name`` from the ``3-say_my_name`` module:
+    >>> say_my_name = __import__("3-say_my_name").say_my_name
+
+first_name isn't string:
+    >>> say_my_name(3, "Bilal")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+last_name isn't string:
+    >>> say_my_name("Bilal", 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+Normal case:
+    >>> say_my_name("Bilal", "Ajaha")
+    My name is Bilal Ajaha
