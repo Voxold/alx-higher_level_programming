@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 0x0D-SQL-introduction
 
 What’s a database
@@ -12,6 +11,3 @@ How to SELECT data from a table
 How to INSERT, UPDATE or DELETE data
 What are subqueries
 How to use MySQL functions
-=======
-Python programming
->>>>>>> 2014abd6e595e8fe3bc2363ec537076db5767ac8

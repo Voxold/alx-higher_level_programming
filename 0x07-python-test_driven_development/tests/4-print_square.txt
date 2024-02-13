@@ -1,0 +1,33 @@
+
+
+The ``4-print_square`` module
+======================
+
+Using ``print_square``
+-------------------
+
+This is an add_integer test file
+First import ``print_square`` from the ``4-print_square`` module:
+
+    >>> print_square = __import__("4-print_square").print_square
+
+1 size is less than 0:
+    >>> print_square(-1)
+    Traceback (most recent call last):
+    ...
+    ValueError: size must be >= 0
+
+2 size is not int:
+    >>> print_square(1.9)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+3 Normal:
+    >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
+    
+    
